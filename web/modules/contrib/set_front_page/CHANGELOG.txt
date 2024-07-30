@@ -1,0 +1,14 @@
+Set_Front_Page 8.x-1.0rc2, 2023-02-24
+--------------------------------------
+#3150993 by DamienMcKenna: D9 test fix.
+#3298040 by Project Update Bot, DamienMcKenna: Automated Drupal 10
+  compatibility fixes.
+
+
+Set_Front_Page 8.x-1.0-rc1, 2020-06-11
+--------------------------------------
+By ziomizar: Initial port to Drupal 8.
+By DamienMcKenna: Minor code tidying.
+#2912988 by ziomizar, DamienMcKenna: Convert tests to BrowerTestBase.
+#3150972 by DamienMcKenna: Drupal 9 compatibility fixes.
+#3150993 by DamienMcKenna: Fix tests in 8.x-1.x branch.

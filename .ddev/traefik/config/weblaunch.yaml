@@ -1,0 +1,100 @@
+#ddev-generated
+
+http:
+  routers:
+    
+    
+    weblaunch-web-80-http:
+      
+      rule: HostRegexp(`weblaunch.ddev.site`)
+      
+      middlewares:
+        - autodetect
+      service: "weblaunch-web-80-http"
+      tls: false
+      entrypoints:
+        - http-80
+    
+    
+    weblaunch-web-8025-http:
+      
+      rule: HostRegexp(`weblaunch.ddev.site`)
+      
+      middlewares:
+        - autodetect
+      service: "weblaunch-web-8025-http"
+      tls: false
+      entrypoints:
+        - http-8025
+    
+    
+    
+    
+    
+    
+    weblaunch-web-80-https:
+      
+      rule: HostRegexp(`weblaunch.ddev.site`)
+      
+      middlewares:
+        - autodetect
+      service: "weblaunch-web-80-https"
+      
+      tls: true
+      
+      entrypoints:
+        - http-443
+    
+    
+    weblaunch-web-8025-https:
+      
+      rule: HostRegexp(`weblaunch.ddev.site`)
+      
+      middlewares:
+        - autodetect
+      service: "weblaunch-web-8025-https"
+      
+      tls: true
+      
+      entrypoints:
+        - http-8026
+    
+    
+
+  # autodetect won't be needed in Traefik 3 https://github.com/traefik/traefik/pull/9546
+  middlewares:
+    autodetect:
+      contentType:
+        autoDetect: false
+
+  services:
+    
+    weblaunch-web-80-http:
+      loadbalancer:
+        servers:
+          - url: http://ddev-weblaunch-web:80
+    
+    weblaunch-web-8025-http:
+      loadbalancer:
+        servers:
+          - url: http://ddev-weblaunch-web:8025
+    
+    weblaunch-web-80-https:
+    
+      loadbalancer:
+        servers:
+          - url: http://ddev-weblaunch-web:80
+    
+    weblaunch-web-8025-https:
+    
+      loadbalancer:
+        servers:
+          - url: http://ddev-weblaunch-web:8025
+    
+
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/weblaunch.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/weblaunch.key
+

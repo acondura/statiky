@@ -1,0 +1,10 @@
+name: Set Front Page
+description: "Simple module for assigning the current page as the site's front page"
+type: module
+configure: set_front_page.settings
+core_version_requirement: ^9.1 || ^10
+
+# Information added by Drupal.org packaging script on 2023-02-24
+version: '8.x-1.0-rc2'
+project: 'set_front_page'
+datestamp: 1677273025
