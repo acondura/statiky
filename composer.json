@@ -22,9 +22,11 @@
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-project-message": "^10.3",
         "drupal/core-recommended": "^10.3",
+        "drupal/easy_breadcrumb": "^2.0",
         "drupal/gin": "^3.0@RC",
         "drupal/gin_login": "^2.1",
         "drupal/gin_toolbar": "^1.0@RC",
+        "drupal/pathauto": "^1.13",
         "drupal/require_login": "^3.0",
         "drupal/set_front_page": "^1.0@RC",
         "drupal/social_auth": "^3.1",
@@ -109,11 +111,11 @@
         },
         "patches": {
             "drupal/set_front_page": {
-                "https://www.drupal.org/project/set_front_page/issues/3464729": "https://www.drupal.org/files/issues/2024-07-30/3464729.patch"
-            },
-            "patchLevel": {
-                "drupal/set_front_page": "-p1"
+                "https://www.drupal.org/project/set_front_page/issues/3464729": "https://git.drupalcode.org/project/set_front_page/-/merge_requests/3.patch"
             }
+        },
+        "patchLevel": {
+            "drupal/set_front_page": "-p1"
         }
     }
 }

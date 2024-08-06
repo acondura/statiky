@@ -1,0 +1,38 @@
+--- src/Form/SetFrontPageEntitySettings.php
++++ src/Form/SetFrontPageEntitySettings.php
+@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\Core\Routing\CurrentRouteMatch;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+-use Drupal\Core\Path\AliasManagerInterface;
++use Drupal\path_alias\AliasManagerInterface;
+ use Drupal\Core\Path\PathValidatorInterface;
+ use Drupal\set_front_page\SetFrontPageManager;
+ use Drupal\Core\Url;
+@@ -27,7 +27,7 @@ class SetFrontPageEntitySettings extends FormBase {
+   /**
+    * The alias manager.
+    *
+-   * @var \Drupal\Core\Path\AliasManagerInterface
++   * @var \Drupal\path_alias\AliasManagerInterface
+    */
+   protected $aliasManager;
+ 
+@@ -50,7 +50,7 @@ class SetFrontPageEntitySettings extends FormBase {
+    *
+    * @param \Drupal\Core\Routing\CurrentRouteMatch $routeMatch
+    *   The route match.
+-   * @param \Drupal\Core\Path\AliasManagerInterface $alias_manager
++   * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
+    *   The path alias manager.
+    * @param \Drupal\Core\Path\PathValidatorInterface $path_validator
+    *   The path validator.
+@@ -75,7 +75,7 @@ class SetFrontPageEntitySettings extends FormBase {
+     return new static(
+       // Load the service required to construct this class.
+       $container->get('current_route_match'),
+-      $container->get('path.alias_manager'),
++      $container->get('path_alias.manager'),
+       $container->get('path.validator'),
+       $container->get('set_front_page.manager'),
+       $container->get('entity_type.manager')

@@ -1,0 +1,99 @@
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -1,17 +1,3 @@
+-Set_Front_Page 7.x-1.0, 2015-08-06
++Set_Front_Page 8.x-1.x, xxxx-xx-xx
+ ----------------------------------
+-#2386369 by DamienMcKenna, Dane Powell: hook_permission() is misspelled.
+-#2385357 by twistor, DamienMcKenna: entity_info[bundle info] does not exist.
+-#2386389 by DamienMcKenna: Abstract out the list of supported entities.
+-#2386405 by DamienMcKenna: The front page variable is optional.
+-#2386389 by DamienMcKenna: Updated hook_uninstall() to support all entities.
+-#2385287 by Pravin Ajaaz: Improved UX on per-entity page.
+-#2398985 by Pravin Ajaaz, DamienMcKenna: Fixed problem saving settings form with
+-  empty default front page value.
+-#2396705 by DamienMcKenna: Fix support for taxonomy term pages.
+-
+-
+-Set_Front_Page 7.x-1.0-rc1, 2014-12-01
+---------------------------------------
+-Initial release.
+-By DamienMcKenna: Added support for a 'default' front page.
++By ziomizar: Initial port to Drupal 8.
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -1,3 +1,4 @@
+ Set_Front_Page 8.x-1.x, xxxx-xx-xx
+ ----------------------------------
+ By ziomizar: Initial port to Drupal 8.
++By DamienMcKenna: Minor code tidying.
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -2,3 +2,4 @@ Set_Front_Page 8.x-1.x, xxxx-xx-xx
+ ----------------------------------
+ By ziomizar: Initial port to Drupal 8.
+ By DamienMcKenna: Minor code tidying.
++#2912988 by ziomizar, DamienMcKenna: Convert tests to BrowerTestBase.
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -3,3 +3,4 @@ Set_Front_Page 8.x-1.x, xxxx-xx-xx
+ By ziomizar: Initial port to Drupal 8.
+ By DamienMcKenna: Minor code tidying.
+ #2912988 by ziomizar, DamienMcKenna: Convert tests to BrowerTestBase.
++#3150972 by DamienMcKenna: Drupal 9 compatibility fixes.
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -1,5 +1,5 @@
+-Set_Front_Page 8.x-1.x, xxxx-xx-xx
+-----------------------------------
++Set_Front_Page 8.x-1.0-rc1, 2020-06-11
++--------------------------------------
+ By ziomizar: Initial port to Drupal 8.
+ By DamienMcKenna: Minor code tidying.
+ #2912988 by ziomizar, DamienMcKenna: Convert tests to BrowerTestBase.
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -4,3 +4,4 @@ By ziomizar: Initial port to Drupal 8.
+ By DamienMcKenna: Minor code tidying.
+ #2912988 by ziomizar, DamienMcKenna: Convert tests to BrowerTestBase.
+ #3150972 by DamienMcKenna: Drupal 9 compatibility fixes.
++#3150993 by DamienMcKenna: Fix tests in 8.x-1.x branch.
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -1,3 +1,7 @@
++Set_Front_Page 8.x-1.x-dev, 2023-xx-xx
++--------------------------------------
++
++
+ Set_Front_Page 8.x-1.0-rc1, 2020-06-11
+ --------------------------------------
+ By ziomizar: Initial port to Drupal 8.
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -1,5 +1,6 @@
+ Set_Front_Page 8.x-1.x-dev, 2023-xx-xx
+ --------------------------------------
++#3150993 by DamienMcKenna: D9 test.
+ 
+ 
+ Set_Front_Page 8.x-1.0-rc1, 2020-06-11
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -1,6 +1,8 @@
+ Set_Front_Page 8.x-1.x-dev, 2023-xx-xx
+ --------------------------------------
+-#3150993 by DamienMcKenna: D9 test.
++#3150993 by DamienMcKenna: D9 test fix.
++#3298040 by Project Update Bot, DamienMcKenna: Automated Drupal 10
++  compatibility fixes.
+ 
+ 
+ Set_Front_Page 8.x-1.0-rc1, 2020-06-11
+--- CHANGELOG.txt
++++ CHANGELOG.txt
+@@ -1,4 +1,4 @@
+-Set_Front_Page 8.x-1.x-dev, 2023-xx-xx
++Set_Front_Page 8.x-1.0rc2, 2023-02-24
+ --------------------------------------
+ #3150993 by DamienMcKenna: D9 test fix.
+ #3298040 by Project Update Bot, DamienMcKenna: Automated Drupal 10
