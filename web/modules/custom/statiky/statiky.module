@@ -4,3 +4,21 @@
  * @file
  * Primary module hooks for Statiky module.
  */
+
+/**
+ * Implements hook_node_update().
+ */
+function my_module_node_update(Drupal\node\NodeInterface $node) {
+  tomeExport();
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function my_module_node_delete(Drupal\node\NodeInterface $node) {
+  tomeExport();
+}
+
+function tomeExport() {
+
+}
