@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * File for batch_pugin.module.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function batch_plugin_cron() {
+  // Get all the CRON batch plugins.
+  /** @var \Drupal\batch_plugin\BatchPluginManager $manager */
+  $manager = \Drupal::service('plugin.manager.batch_plugin');
+  $definitions = $manager->getDefinitionsByType('cron');
+  if (empty($definitions)) {
+    return;
+  }
+
+  // Process each CRON batch plugin.
+  /** @var \Drupal\batch_plugin\ProcessorPluginManager $processor_manager */
+  $processor_manager = \Drupal::service('plugin.manager.batch_plugin_processor');
+  foreach ($definitions as $id => $definition) {
+    /** @var \Drupal\batch_plugin\CronProcessorPluginInterface $cron_processor */
+    $cron_processor = $processor_manager->createInstance('cron');
+    $cron_processor->setQueueId($definition['queue_name']);
+    /** @var \Drupal\batch_plugin\BatchPluginInterface $batch_plugin */
+    $batch_plugin = $manager->createInstance($definition['id'], $definition['configuration'] ?? []);
+    $processor_manager->processBatchPlugin($batch_plugin, $cron_processor);
+  }
+}

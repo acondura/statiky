@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * @file
+ * batch_plugin.install
+ */
+
+use Drupal\batch_plugin\Plugin\Derivative\BatchPluginQueueWorker;
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function batch_plugin_schema() {
+  $schema = [];
+
+  $schema['batch_plugin_cron_log'] = [
+    'description' => 'Batch Plugin CRON Logs',
+    'fields' => [
+      'plugin_id' => [
+        'description' => 'Plugin ID',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'start_time' => [
+        'description' => 'Timestamp of execution start',
+        'type' => 'float',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'end_time' => [
+        'description' => 'Timestamp of execution end',
+        'type' => 'float',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'uid' => [
+        'description' => 'User ID',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'running' => [
+        'description' => 'Whether this CRON job is running',
+        'type' => 'int',
+        'size' => 'normal',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['plugin_id'],
+  ];
+  $schema['batch_plugin_queue_context'] = [
+    'description' => 'Batch Plugin Queue Context',
+    'fields' => [
+      'queue_id' => [
+        'description' => 'Queue ID',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'operations' => [
+        'description' => 'A json_encoded array containing the operations.',
+        'type' => 'blob',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+      'context' => [
+        'description' => 'A json_encoded array containing the context data.',
+        'type' => 'blob',
+        'not null' => FALSE,
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => ['queue_id'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function batch_plugin_uninstall($is_syncing) {
+  /** @var \Drupal\Core\Queue\QueueWorkerManagerInterface $manager */
+  $manager = \Drupal::service('plugin.manager.queue_worker');
+  $definitions = $manager->getDefinitions();
+  foreach ($definitions as $id => $definition) {
+    if (str_starts_with($id, BatchPluginQueueWorker::QUEUE_NAME_PREFIX)) {
+      \Drupal::queue($id)->deleteQueue();
+    }
+  }
+}
+
+/**
+ * Add queue context schema.
+ */
+function batch_plugin_update_9001(&$sandbox) {
+  $schema = batch_plugin_schema();
+  $database = Database::getConnection()->schema();
+  $database->createTable('batch_plugin_queue_context', $schema['batch_plugin_queue_context']);
+}

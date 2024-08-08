@@ -1,0 +1,5 @@
+entity.batch_plugin_entity.overview:
+  title: Batch plugins
+  parent: system.admin_structure
+  description: 'List of batch plugins.'
+  route_name: entity.batch_plugin_entity.collection

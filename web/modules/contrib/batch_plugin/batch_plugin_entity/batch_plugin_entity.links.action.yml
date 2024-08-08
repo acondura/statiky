@@ -1,0 +1,5 @@
+entity.batch_plugin_entity.add_form:
+  route_name: 'entity.batch_plugin_entity.add_form'
+  title: 'Add batch plugin'
+  appears_on:
+    - entity.batch_plugin_entity.collection

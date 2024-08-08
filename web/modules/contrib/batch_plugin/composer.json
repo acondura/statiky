@@ -1,0 +1,21 @@
+{
+    "name": "drupal/batch_plugin",
+    "type": "drupal-module",
+    "description": "Processes batches, cron tasks, queues and drush batches via simple plugins.",
+    "keywords": ["Drupal"],
+    "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/batch_plugin",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/batch_plugin",
+        "source": "http://cgit.drupalcode.org/batch_plugin"
+    },
+    "require": {
+        "dragonmantank/cron-expression": "^3"
+    },
+    "authors": [
+        {
+            "name": "Dubs",
+            "role": "Maintainer"
+        }
+    ]
+}

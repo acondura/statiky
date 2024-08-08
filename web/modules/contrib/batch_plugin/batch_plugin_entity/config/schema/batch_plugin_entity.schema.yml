@@ -1,0 +1,20 @@
+batch_plugin_entity.batch_plugin_entity.*:
+  type: config_entity
+  label: Batch plugin
+  mapping:
+    id:
+      type: string
+      label: ID
+    label:
+      type: label
+      label: Label
+    uuid:
+      type: string
+    description:
+      type: string
+    plugin:
+      type: string
+    processor:
+      type: string
+    settings:
+      type: mapping

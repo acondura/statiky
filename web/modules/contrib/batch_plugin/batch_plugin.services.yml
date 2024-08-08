@@ -1,0 +1,18 @@
+services:
+  plugin.manager.batch_plugin:
+    class: Drupal\batch_plugin\BatchPluginManager
+    parent: default_plugin_manager
+
+  plugin.manager.batch_plugin_processor:
+    class: Drupal\batch_plugin\ProcessorPluginManager
+    parent: default_plugin_manager
+
+  batch_plugin.commands:
+    class: Drupal\batch_plugin\Commands\ProcessBatchPluginCommands
+    arguments: ['@plugin.manager.batch_plugin', '@plugin.manager.batch_plugin_processor', '@logger.factory']
+    tags:
+      - { name: drush.command }
+
+  logger.batch_plugin_cron:
+    class: Drupal\batch_plugin\Logger\BatchPluginCronLog
+    arguments: ['@database']

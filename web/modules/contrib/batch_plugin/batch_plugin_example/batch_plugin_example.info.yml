@@ -1,0 +1,14 @@
+name: Batch Plugin Example
+type: module
+description: Batch Plugin Example
+package: Batch Plugin
+core_version_requirement: ^8 || ^9 || ^10
+
+dependencies:
+  - batch_plugin:batch_plugin
+
+
+# Information added by Drupal.org packaging script on 2024-07-12
+version: '1.0.9'
+project: 'batch_plugin'
+datestamp: 1720781932

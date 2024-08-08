@@ -1,0 +1,39 @@
+entity.batch_plugin_entity.collection:
+  path: '/admin/structure/batch-plugin'
+  defaults:
+    _entity_list: 'batch_plugin_entity'
+    _title: 'Batch plugin configuration'
+  requirements:
+    _permission: 'administer batch_plugin_entity'
+
+entity.batch_plugin_entity.add_form:
+  path: '/admin/structure/batch_plugin/add'
+  defaults:
+    _controller: '\Drupal\batch_plugin_entity\Controller\BatchPluginEntityLibraryController::listPlugins'
+    _title: 'Add plugin'
+  requirements:
+    _permission: 'administer batch_plugin_entity'
+
+batch_plugin_entity.admin_add:
+  path: '/admin/structure/batch_plugin/{plugin_id}'
+  defaults:
+    _controller: '\Drupal\batch_plugin_entity\Controller\BatchPluginEntityAddController::batchPluginEntityAddConfigureForm'
+    _title: 'Configure plugin'
+  requirements:
+    _permission: 'administer batch_plugin_entity'
+
+entity.batch_plugin_entity.edit_form:
+  path: '/admin/structure/batch-plugin/{batch_plugin_entity}'
+  defaults:
+    _entity_form: 'batch_plugin_entity.edit'
+    _title: 'Edit a batch plugin'
+  requirements:
+    _permission: 'administer batch_plugin_entity'
+
+entity.batch_plugin_entity.delete_form:
+  path: '/admin/structure/batch-plugin/{batch_plugin_entity}/delete'
+  defaults:
+    _entity_form: 'batch_plugin_entity.delete'
+    _title: 'Delete a batch plugin'
+  requirements:
+    _permission: 'administer batch_plugin_entity'
