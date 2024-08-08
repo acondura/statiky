@@ -1,0 +1,7 @@
+name: 'Statiky'
+type: module
+description: 'Statiky settings'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:tome_static

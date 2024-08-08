@@ -19,11 +19,14 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.5",
         "drupal/batch_plugin": "^1.0",
+        "drupal/bpmn_io": "^2.0",
         "drupal/coffee": "^1.4",
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-project-message": "^10.3",
         "drupal/core-recommended": "^10.3",
         "drupal/easy_breadcrumb": "^2.0",
+        "drupal/eca": "^2.0",
+        "drupal/eca_tamper": "^2.0",
         "drupal/examples": "^4.0",
         "drupal/gin": "^3.0@RC",
         "drupal/gin_login": "^2.1",
@@ -41,7 +44,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
@@ -113,7 +116,7 @@
         },
         "patches": {
             "drupal/set_front_page": {
-                "https://www.drupal.org/project/set_front_page/issues/3464729": "https://git.drupalcode.org/project/set_front_page/-/merge_requests/3.patch"
+                "https://www.drupal.org/project/set_front_page/issues/3464729": "https://www.drupal.org/files/issues/2024-07-30/3464729.patch"
             }
         },
         "patchLevel": {

@@ -7,6 +7,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  bpmn_io: 0
   breakpoint: 0
   ckeditor5: 0
   coffee: 0
@@ -17,6 +18,11 @@ module:
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
+  eca: 0
+  eca_modeller_bpmn: 0
+  eca_tamper: 0
+  eca_ui: 0
   editor: 0
   field: 0
   field_ui: 0
@@ -43,7 +49,9 @@ module:
   social_auth_apple: 0
   social_auth_facebook: 0
   social_auth_google: 0
+  statiky: 0
   system: 0
+  tamper: 0
   taxonomy: 0
   text: 0
   token: 0
