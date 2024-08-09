@@ -1,6 +1,6 @@
 _core:
   default_config_hash: ToUo306CdZNSwmAqFYzH_R62EHsnZP-Mmn_HU4cUUpg
-site_frontpage_default: ''
+site_frontpage_default: /node
 types:
   set_front_page_node_type__article: true
   set_front_page_node_type__page: true
